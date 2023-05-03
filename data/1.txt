@@ -1,0 +1,20 @@
+Initialize Library
+It is necessary for applications to initialize Foxit PDF SDK before calling any APIs. The function
+foxit::common::Library::Initialize is provided to initialize Foxit PDF SDK. A license should be
+purchased for the application and pass unlock key and code to get proper supports. When there is
+no need to use Foxit PDF SDK any more, please call function foxit::common::Library::Release to
+release it.
+Note The parameter "sn" can be found in the "gsdk_sn.txt" (the string after "SN=") and the "key" can be found in the
+"gsdk_key.txt" (the string after "Sign=").
+Example:
+3.1.1 How to initialize Foxit PDF SDK
+#include "include/common/fs_common.h"
+using namespace foxit;
+using namespace common;
+...
+const char* sn = " ";
+const char* key = " ";
+foxit::ErrorCode code = Library::Initialize(sn, key);
+if (code != foxit::e_ErrSuccess) {
+return FALSE;
+}

@@ -1,0 +1,9 @@
+How to load an existing PDF document from file path
+#include "include/pdf/fs_pdfdoc.h"
+using namespace foxit;
+using namespace common;
+using namespace pdf;
+...
+PDFDoc doc("Sample.pdf");
+ErrorCode error_code = doc.Load();
+if (error_code!= foxit::e_ErrSuccess) return 0;

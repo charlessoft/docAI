@@ -1,0 +1,8 @@
+How to create a PDF document from scratch
+#include "include/pdf/fs_pdfdoc.h"
+using namespace foxit;
+using namespace common;
+using namespace pdf;
+...
+PDFDoc doc();
+Note: It creates a new PDF document without any pages.

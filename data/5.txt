@@ -1,0 +1,18 @@
+How to load an existing PDF document from a memory buffer
+#include "include/pdf/fs_pdfdoc.h"
+using namespace foxit;
+using namespace common;
+using namespace pdf;
+...
+FILE* pFile = fopen(TEST_DOC_PATH"blank.pdf", "rb");
+ASSERT_EQ(TRUE, NULL != pFile);
+fseek(pFile, 0, SEEK_END);
+long lFileSize = ftell(pFile);
+char* buffer = new char[lFileSize];
+memset(buffer, 0, sizeof(char)*lFileSize);
+fseek(pFile, 0, SEEK_SET);
+fread(buffer, sizeof(char), lFileSize, pFile);
+fclose(pFile);
+PDFDoc doc = PDFDoc(buffer, lFileSize);
+ErrorCode error_code = doc.Load();
+if (error_code!= foxit::e_ErrSuccess) return 0;
