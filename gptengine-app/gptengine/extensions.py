@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 """Extensions module. Each extension is initialized in the app factory located in app.py."""
 from celery import Celery
-from flasgger import Swagger
+# from flasgger import Swagger
 from flask_marshmallow import Marshmallow
 from flask_migrate import Migrate
 from flask_sqlalchemy import SQLAlchemy, BaseQuery
@@ -55,5 +55,5 @@ db = SQLAlchemy(query_class=Query)
 # scheduler = APScheduler()
 
 
-swagger = Swagger()
+# swagger = Swagger()
 ma = Marshmallow()

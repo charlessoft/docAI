@@ -14,7 +14,7 @@ PROJECT_DIR = dirname(dirname(abspath(__file__)))
 sys.path.insert(0, PROJECT_DIR)
 
 # from gptengine.extensions import swagger
-from gptengine.extensions import swagger, db, migrate, ma, redis_store
+from gptengine.extensions import  db, migrate, ma, redis_store
 from gptengine.settings import swagger_config, FLASK_PORT,DEBUG
 from gptengine.common.models import testmodel
 from gptengine.core.common_util import get_resource_path
@@ -84,8 +84,8 @@ def init_shell(app):
 def register_extensions(app):
     """Register Flask extensions."""
 
-    swagger.config = swagger_config
-    swagger.init_app(app)
+    # swagger.config = swagger_config
+    # swagger.init_app(app)
 
     # bcrypt.init_app(app)
     # cache.init_app(app)

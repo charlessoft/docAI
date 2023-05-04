@@ -16,3 +16,6 @@ pyquery
 pymysql
 captcha
 pandas
+langchain  
+openai
+tiktoken

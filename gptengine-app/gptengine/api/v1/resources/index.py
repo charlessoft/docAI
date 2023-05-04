@@ -22,7 +22,7 @@ openai.api_base = "https://adt-openai.openai.azure.com/"
 # openai.api_version = "2022-12-01"
 openai.api_version = "2023-03-15-preview"
 # openai.api_key = os.getenv("OPENAI_API_KEY")
-openai.api_key = os.getenv("OPENAI_API_KEY", 'xxx')
+openai.api_key = os.getenv("OPENAI_API_KEY", 'azure openai key')
 from langchain.chains.conversation.memory import ConversationBufferMemory, ConversationSummaryMemory
 from langchain.chains import ConversationChain
 
@@ -233,7 +233,7 @@ def memerychat():
 
 
     llm = NewAzureOpenAI(
-        openai_api_key=os.getenv("OPENAI_API_KEY", 'xx'),
+        openai_api_key=os.getenv("OPENAI_API_KEY", openai.api_key),
         engine="ChatGPT-0301",
         temperature=0.7,
         max_tokens=800,
