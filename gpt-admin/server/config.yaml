@@ -107,12 +107,12 @@ mssql:
   log-mode: ""
   log-zap: false
 mysql:
-  path: 117.78.19.194
+  path: sql.wsfdb.cn
   port: "3306"
   config: charset=utf8mb4&parseTime=True&loc=Local
-  db-name: gptadmin
-  username: gptadmin
-  password: TcTk6LK5Nk6EEcD7
+  db-name: mytestopenai
+  username: mytestopenai
+  password: aA123456
   prefix: ""
   singular: false
   engine: ""
